@@ -38,7 +38,6 @@ bot.on("ready", () => {
   }
 });*/
 
-
 bot.on_message_delete(message => {
   if (
     Config.nicknames.indexOf(message.author.username.toLocaleLowerCase()) !== -1
@@ -57,6 +56,7 @@ bot.on_message_delete(message => {
       const attachment = new Attachment(iterator[1].url);
       sendMessage(message.author.username, channel, attachment);
     }
-  })
+  }
+});
 
 bot.login(process.env.TOKEN);
