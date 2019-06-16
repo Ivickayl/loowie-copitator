@@ -38,7 +38,7 @@ bot.on("ready", () => {
   }
 });*/
 
-bot.on_message_delete(message => {
+bot.on("messageDelete", message => {
   if (
     Config.nicknames.indexOf(message.author.username.toLocaleLowerCase()) !== -1
   ) {
