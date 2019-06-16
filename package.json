@@ -1,0 +1,23 @@
+{
+  "name": "bot-loowie-copitator-v42",
+  "version": "1.0.0",
+  "description": "Small bot, and I'm tired",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivickayl/loowie-copitator.git"
+  },
+  "author": "Ivickayl (Me!)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ivickayl/loowie-copitator/issues"
+  },
+  "homepage": "https://github.com/Ivickayl/loowie-copitator#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
