@@ -17,7 +17,7 @@ bot.on("ready", () => {
   console.log("READY");
 });
 
-bot.on("message", message => {
+/*bot.on("message", message => {
   if (
     Config.nicknames.indexOf(message.author.username.toLocaleLowerCase()) !== -1
   ) {
@@ -36,6 +36,27 @@ bot.on("message", message => {
       sendMessage(message.author.username, channel, attachment);
     }
   }
-});
+});*/
+
+
+bot.on_message_delete(message => {
+  if (
+    Config.nicknames.indexOf(message.author.username.toLocaleLowerCase()) !== -1
+  ) {
+    content = message.content;
+
+    const channel = message.guild.channels.find(
+      ch => ch.name === Config.channel
+    );
+
+    if (!channel) return;
+
+    sendMessage(message.author.username, channel, content);
+
+    for (const iterator of message.attachments) {
+      const attachment = new Attachment(iterator[1].url);
+      sendMessage(message.author.username, channel, attachment);
+    }
+  })
 
 bot.login(process.env.TOKEN);
