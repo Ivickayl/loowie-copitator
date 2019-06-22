@@ -52,11 +52,16 @@ bot.on("messageDelete", message => {
 
     sendMessage(message.author.username, channel, content);
 
-    for (const iterator of message.attachments) {
+    /*for (const iterator of message.attachments) {
+
+      console.log(message.attachments)
+
       const attachment = new Attachment(iterator[1].url);
+
       sendMessage(message.author.username, channel, attachment);
-    }
+    }*/
   }
 });
 
 bot.login(process.env.TOKEN);
+
