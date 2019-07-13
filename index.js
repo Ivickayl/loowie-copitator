@@ -54,12 +54,12 @@ bot.on("messageDelete", message => {
 
     for (const iterator of message.attachments) {
       //console.log(message.attachments);
+      imgUrl = iterator[1].proxyURL;
+      const attachment = new Attachment(imgUrl);
 
-      //const attachment = new Attachment(iterator[1].url);
+      //console.log(iterator[1].proxyURL);
 
-      console.log(iterator[1].proxyURL);
-
-      //sendMessage(message.author.username, channel, attachment);
+      sendMessage(message.author.username, channel, attachment);
     }
   }
 });
