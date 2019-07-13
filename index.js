@@ -53,11 +53,8 @@ bot.on("messageDelete", message => {
     sendMessage(message.author.username, channel, content);
 
     for (const iterator of message.attachments) {
-      //console.log(message.attachments);
       imgUrl = iterator[1].proxyURL;
       const attachment = new Attachment(imgUrl);
-
-      //console.log(iterator[1].proxyURL);
 
       sendMessage(message.author.username, channel, attachment);
     }

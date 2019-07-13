@@ -1,6 +1,6 @@
 {
-  "nicknames": ["thamnosebleed","ivickayl"],
-  "channel": "shitpost",
+  "nicknames": ["thamnosebleed"],
+  "channel": "loowie",
   "env": {
     "BOT_TOKEN": {
       "description": "A Secret Bot Token, Used To Login The BOT. Get The Token In Your App Settings.",
