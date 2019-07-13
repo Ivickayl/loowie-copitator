@@ -5,14 +5,6 @@ const Config = require("./config.json");
 const prefix = process.env.PREFIX;
 const bot = new Client();
 
-function sendMessage(author, channel, content) {
-  if (typeof content === "string") {
-    channel.send(`${author} : ${content}`);
-  } else {
-    channel.send(`${author}`, content);
-  }
-}
-
 bot.on("ready", () => {
   console.log("READY");
 });
@@ -38,6 +30,14 @@ bot.on("ready", () => {
   }
 });*/
 
+function sendMessage(author, channel, content) {
+  if (typeof content === "string") {
+    channel.send(`${author} : ${content}`);
+  } else {
+    channel.send(`${author}`, content);
+  }
+}
+
 bot.on("messageDelete", message => {
   if (
     Config.nicknames.indexOf(message.author.username.toLocaleLowerCase()) !== -1
@@ -52,16 +52,16 @@ bot.on("messageDelete", message => {
 
     sendMessage(message.author.username, channel, content);
 
-    /*for (const iterator of message.attachments) {
+    for (const iterator of message.attachments) {
+      console.log(message.attachments);
 
-      console.log(message.attachments)
+      //const attachment = new Attachment(iterator[1].url);
 
-      const attachment = new Attachment(iterator[1].url);
+      console.log(iterator[1].url);
 
-      sendMessage(message.author.username, channel, attachment);
-    }*/
+      //sendMessage(message.author.username, channel, attachment);
+    }
   }
 });
 
 bot.login(process.env.TOKEN);
-
